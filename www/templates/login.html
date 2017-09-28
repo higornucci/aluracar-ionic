@@ -1,0 +1,20 @@
+<ion-view>
+    <ion-header-bar>
+        <h1>Olá, faça seu login</h1>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="realizarLogin()">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">E-mail</span>
+                    <input type="text" ng-model="login.email" placeholder="ex: higornucci@gmail.com">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Senha</span>
+                    <input type="password" ng-model="login.senha" placeholder="********">
+                </label>
+                <button class="button button-block button-positive" type="submit"> Entrar</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

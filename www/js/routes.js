@@ -1,23 +1,44 @@
 angular.module('starter')
     .config(function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('listagem');
+        $urlRouterProvider.otherwise('login');
         $stateProvider
-
-            .state('listagem', {
-                url: '/listagem',
-                templateUrl: 'templates/listagem.html',
-                controller: 'ListagemController'
+            .state('app', {
+                url: '/app',
+                templateUrl: 'templates/menu.html',
+                abstract: true,
+                controller: 'MenuController'
             })
-
+            .state('app.listagem', {
+                url: '/listagem',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/listagem.html',
+                        controller: 'ListagemController'
+                    }
+                }
+            })
+            .state('app.perfil', {
+                url: '/perfil',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/perfil.html',
+                        controller: 'PerfilController'
+                    }
+                }
+            })
             .state('carroescolhido', {
                 url: '/carroescolhido/:carro',
                 templateUrl: 'templates/carroescolhido.html',
                 controller: 'CarroEscolhidoController'
             })
-
             .state('finalizarpedido', {
                 url: '/finalizarpedido/:carro',
                 templateUrl: 'templates/finalizarpedido.html',
                 controller: 'FinalizarPedidoController'
+            })
+            .state('login', {
+                url: '/login',
+                templateUrl: 'templates/login.html',
+                controller: 'LoginController'
             })
     });

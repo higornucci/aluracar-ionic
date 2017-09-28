@@ -28,6 +28,7 @@
   <script src="lib/ionic/js/ionic.bundle.js"></script>
 
   <!-- cordova script (this will be a 404 during development) -->
+  <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
   <script src="cordova.js"></script>
 
   <!-- your app's js -->
@@ -35,17 +36,15 @@
   <script src="js/service.js"></script>
   <script src="js/controller.js"></script>
   <script src="js/routes.js"></script>
+  <script src="lib/angular-br-filters/release/angular-br-filters.min.js"></script>
 </head>
 
 <body ng-app="starter" ng-controller="ListagemController">
-
   <ion-pane>
-    <ion-nav-bar class="bar bar-positive">
-      <ion-nav-back-button></ion-nav-back-button>
-    </ion-nav-bar>
-    <ion-nav-view></ion-nav-view>
+    <ion-nav-view>
+    </ion-nav-view>
     <ion-footer-bar class="bar-stable">
-      <h1 class="title"> Rua Vergueiro, 3185 - {{dataAtual | date:'yyyy-MM-dd'}} </h1>
+      <h1 class="title">Rua Vergueiro, 3185</h1>
     </ion-footer-bar>
   </ion-pane>
 </body>
